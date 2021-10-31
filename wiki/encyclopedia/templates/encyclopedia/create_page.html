@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <form action = "{% url 'create_page'%}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title Name</label>
+            <input type="text" class="form-control" name="Name" placeholder="Input Title Name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Title body</label>
+            <textarea class="form-control" name="Text" rows="3" placeholder="Expample: # CSS
+CSS is a language that can be used to add style to an [HTML](/wiki/HTML) page.
+            "></textarea>
+            <input type="submit">
+            
+          </div>
+            
+    </form>
+{% endblock %}
